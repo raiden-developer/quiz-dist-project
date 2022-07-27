@@ -1,0 +1,9 @@
+// @mixin font-woff($font-family, $url, $weight, $style);
+@include font-woff("Stolzl", "Stolzl-Light", 300, normal);
+@include font-woff2("Stolzl", "Stolzl-Light", 300, normal);
+@include font-woff("Stolzl", "Stolzl-Regular", 400, normal);
+@include font-woff2("Stolzl", "Stolzl-Regular", 400, normal);
+@include font-woff("Stolzl", "Stolzl-Medium", 500, normal);
+@include font-woff2("Stolzl", "Stolzl-Medium", 500, normal);
+@include font-woff("Stolzl", "Stolzl-Bold", 700, normal);
+@include font-woff2("Stolzl", "Stolzl-Bold", 700, normal);

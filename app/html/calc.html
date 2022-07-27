@@ -1,0 +1,218 @@
+<div class="calc">
+  <div class="container">
+    <h3 class="calc__title">Калькулятор расчета стоимости</h3>
+    <div class="calc__inner">
+      <div class="calc__left">
+        <h4 class="calc__subtitle">Тип постройки</h4>
+        <div class="m-dropdown__wrapper">
+          <div class="calc__row">
+            <span class="calc__descr"> Что будем сносить </span>
+            <div class="tooltip">
+              <button class="tooltip__btn" aria-labelledby="tooltip-1"></button>
+              <div class="tooltip__content" role="tooltip" id="tooltip-1">
+                <p class="tooltip__title">
+                  Учитывайте, что стандартный фундамент – это:
+                </p>
+                <ul class="tooltip__list">
+                  <li class="tooltip__item">
+                    <p class="tooltip__text">Кирпичные столбы</p>
+                  </li>
+                  <li class="tooltip__item">
+                    <p class="tooltip__text">
+                      Некапитальная кирпичная или бетонная лента
+                    </p>
+                  </li>
+                  <li class="tooltip__item">
+                    <p class="tooltip__text">Cтолбы</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="m-dropdown">
+            <button class="m-dropdown__button" type="button">
+              Постройка со стандартным фундаментом или без
+            </button>
+            <div class="m-dropdown__list" data-simplebar>
+              <div class="m-dropdown__list-item" data-value="Постройка со стандартным фундаментом или без">
+                Постройка со стандартным фундаментом или без
+              </div>
+              <div class="m-dropdown__list-item" data-value="Постройка с капитальным фундаментом">
+                Постройка с капитальным фундаментом
+              </div>
+              <div class="m-dropdown__list-item" data-value="Фундамент">
+                Фундамент
+              </div>
+            </div>
+            <input type="text" name="fundament-type" value="Постройка со стандартным фундаментом или без"
+              class="m-dropdown__input-hidden" required />
+          </div>
+        </div>
+        <div class="m-dropdown__wrapper">
+          <div class="calc__row">
+            <span class="calc__descr"> Основной материал постройки </span>
+            <div class="tooltip">
+              <button class="tooltip__btn" aria-labelledby="tooltip-1"></button>
+              <div class="tooltip__content" role="tooltip" id="tooltip-1">
+                <p class="tooltip__title">
+                  Укажите основной материал стен постройки, выберите, к какой из
+                  двух групп принадлежит:
+                </p>
+                <ul class="tooltip__list">
+                  <li class="tooltip__item">
+                    <p class="tooltip__text">
+                      дерево (каркасные, щитовые, из бревна, бруса)
+                    </p>
+                  </li>
+                  <li class="tooltip__item">
+                    <p class="tooltip__text">
+                      кирпич (бетон, пеноблок, шлакобетон)
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="m-dropdown">
+            <button class="m-dropdown__button" type="button">Дерево</button>
+            <div class="m-dropdown__list" data-simplebar>
+              <div class="m-dropdown__list-item" data-value="Дерево">
+                Дерево
+              </div>
+              <div class="m-dropdown__list-item" data-value="Кирпич">
+                Кирпич
+              </div>
+            </div>
+            <input type="text" name="select-material" value="Дерево" class="m-dropdown__input-hidden" required />
+          </div>
+        </div>
+        <h4 class="calc__subtitle">Габариты постройки,м</h4>
+        <div class="calc__inputs">
+          <div class="m-number js-number-input">
+            <div class="calc__row">
+              <span class="calc__descr">Длина</span>
+              <div class="tooltip">
+                <button class="tooltip__btn" aria-labelledby="tooltip-1"></button>
+                <div class="tooltip__content" role="tooltip" id="tooltip-1">
+                  Если пристройки составляют большую часть длины вашей
+                  постройки, то они учитываются при измерении. Легкие пристройки
+                  – крыльцо или веранда – не учитываются.
+                </div>
+              </div>
+            </div>
+            <span class="m-number__wrapper">
+              <input class="m-number__field" type="number" placeholder="12" name="Длина" required min="0" value="4" />
+              <span class="m-number__control m-number__control--inc">
+                <svg class="s-icon">
+                  <use xlink:href="images/sprite.svg#arrow-top"></use>
+                </svg>
+              </span>
+              <span class="m-number__control m-number__control--dec">
+                <svg class="s-icon">
+                  <use xlink:href="images/sprite.svg#arrow-bottom"></use>
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div class="m-number js-number-input">
+            <div class="calc__row">
+              <span class="calc__descr">Ширина</span>
+              <div class="tooltip">
+                <button class="tooltip__btn" aria-labelledby="tooltip-1"></button>
+                <div class="tooltip__content" role="tooltip" id="tooltip-1">
+                  Если пристройки составляют большую часть длины вашей
+                  постройки, то они учитываются при измерении. Легкие пристройки
+                  – крыльцо или веранда – не учитываются.
+                </div>
+              </div>
+            </div>
+            <span class="m-number__wrapper">
+              <input class="m-number__field" type="number" placeholder="12" name="Ширина" required value="4" />
+              <span class="m-number__control m-number__control--inc">
+                <svg class="s-icon">
+                  <use xlink:href="images/sprite.svg#arrow-top"></use>
+                </svg>
+              </span>
+              <span class="m-number__control m-number__control--dec">
+                <svg class="s-icon">
+                  <use xlink:href="images/sprite.svg#arrow-bottom"></use>
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div class="m-number js-number-input">
+            <div class="calc__row">
+              <span class="calc__descr">Высота</span>
+              <div class="tooltip">
+                <button class="tooltip__btn" aria-labelledby="tooltip-1"></button>
+                <div class="tooltip__content" role="tooltip" id="tooltip-1">
+                  Если пристройки составляют большую часть длины вашей
+                  постройки, то они учитываются при измерении. Легкие пристройки
+                  – крыльцо или веранда – не учитываются.
+                </div>
+              </div>
+            </div>
+            <span class="m-number__wrapper">
+              <input class="m-number__field" type="number" placeholder="12" name="Высота" required value="4" />
+              <span class="m-number__control m-number__control--inc">
+                <svg class="s-icon">
+                  <use xlink:href="images/sprite.svg#arrow-top"></use>
+                </svg>
+              </span>
+              <span class="m-number__control m-number__control--dec">
+                <svg class="s-icon">
+                  <use xlink:href="images/sprite.svg#arrow-bottom"></use>
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="calc__right">
+        <h4 class="calc__subtitle calc__subtitle--price">
+          Итоговая стоимость:
+        </h4>
+        <div class="calc__price">
+          <span class="calc__total">
+            <div class="calc__total-number">
+              18 000
+            </div>
+
+            <span class="calc__rub"> ₽ </span>
+          </span>
+          <div class="calc__text calc__text--small">
+            Внимание! Стоимость условная, для ее уточнения оставьте заявку на
+            демонтаж!
+          </div>
+        </div>
+        <form class="calc-form" action="#">
+          <h4 class="calc-form__title"></h4>
+          <label class="calc-form__label" for="#">
+            <span class="sr-only"> Поля для вашего имени </span>
+            <input class="calc-form__input" type="text" placeholder="Ваше имя:" />
+          </label>
+          <label class="calc-form__label" for="#">
+            <span class="sr-only"> Поля для вашего телефона </span>
+            <input class="calc-form__input" type="tel" placeholder="Ваше телефон:" />
+          </label>
+          <label class="calc-form__label calc-form__label--file" for="file-upload-input" data-label-file>
+            <span class="file-select-button">Прикрепите фотографии построек</span>
+            <span class="calc-form__text">
+              Не более 10 фотографий, размером не более 5 МБ
+            </span>
+            <input type="file" name="file-upload-input" id="file-upload-input" />
+          </label>
+          <div class="calc-form__bottom">
+            <button class="calc-form__btn btn" type="submit">
+              Оставить заявку
+            </button>
+            <span class="calc-form__text">
+              Нажимая на кнопку, вы подтверждаете свое согласие на обработку
+              персональных данных.
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

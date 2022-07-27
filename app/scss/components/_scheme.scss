@@ -1,0 +1,353 @@
+.scheme {
+  padding-top: 70px;
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include large {
+      font-size: 52px;
+      // margin-bottom: 38px;
+    }
+
+    @include small-tablet {
+      font-size: 38px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+      // margin-bottom: 15px;
+    }
+  }
+
+  &__wrapper {
+    padding-top: 50px;
+    padding-bottom: 66px;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 3%);
+    background-color: #373738;
+
+    @include small-tablet {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 1%);
+    }
+  }
+
+  &__subtitle {
+    font-size: 58px;
+    color: $color-white;
+    margin-bottom: 28px;
+
+    span {
+      color: #FFAA6B;
+    }
+
+    @include tablet {
+      font-size: 38px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__descr {
+    max-width: 770px;
+    margin: 0 auto;
+    font-size: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+
+    @include small-tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    @include small-tablet {
+      grid-gap: 10px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @include small-tablet {
+    padding-top: 30px;
+  }
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px;
+  margin-bottom: 40px;
+  display: none;
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        width: 5%;
+        height: 15%;
+        background-image: url('../images/icons/arrow-right.svg');
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include tablet {
+          right: -21px;
+        }
+
+        @include small-tablet {
+          top: auto;
+          left: 47%;
+          bottom: -29px;
+          transform: translateX(-50%);
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    @include small-tablet {
+      &:last-child {
+        grid-column: span 2;
+        max-width: 350px;
+        margin: 0 auto;
+      }
+    }
+
+    @include mobile {
+      &:last-child {
+        grid-column: span 1;
+        max-width: 100%;
+        margin: auto;
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px 25px;
+    border-radius: 30px;
+    background-color: #F5F1FF;
+    background-size: 30%;
+    background-position: right 15% top 21%;
+    background-repeat: no-repeat;
+
+    &--master {
+      background-image: url('../images/icons/master.svg');
+    }
+
+    &--pay {
+      background-image: url('../images/icons/pay.svg');
+    }
+
+    &--sale {
+      background-image: url('../images/icons/sale.svg');
+    }
+
+    @include tablet {
+      background-size: 35%;
+    }
+
+    @include mobile {
+      background-size: 30%;
+      background-position: right 15% top 27%;
+    }
+  }
+
+  &__num {
+    font-weight: 700;
+    font-size: 100px;
+    color: rgba(255, 170, 107, 0.7);
+
+    @include tablet {
+      font-size: 80px;
+      margin-bottom: 25px;
+    }
+
+    @include mobile {
+      font-size: 75px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__descr {
+    font-size: 22px;
+    text-align: center;
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+  }
+
+  @include tablet {
+    grid-gap: 25px;
+  }
+
+  @include small-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(1, 210px);
+    justify-content: center;
+  }
+}
+
+.scheme-article {
+  height: 100%;
+  padding: 8px;
+  padding-bottom: 10px;
+  border: 2px dashed #6C6C6C;
+  border-radius: 30px;
+
+  &--online {
+    .scheme-article__title {
+      margin-bottom: 10px;
+
+      @include small-tablet {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &__img {
+    height: 176px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__inner {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  &__num {
+    display: inline-block;
+    font-size: 115px;
+    padding-left: 55px;
+    font-weight: 700;
+    text-align: center;
+    color: rgba(255, 170, 107, 0.4);
+    background-image: url('../images/icons/arrow-scheme.svg');
+    background-size: 40px;
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    @include large {
+      font-size: 90px;
+    }
+
+    @include small-tablet {
+      padding-left: 40px;
+      margin-bottom: 8px;
+      font-size: 60px;
+      background-size: 30px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+    color: $color-white;
+    margin-bottom: 21px;
+
+    @include large {
+      font-size: 17px;
+      margin-bottom: 13px;
+    }
+
+    @include small-tablet {
+      font-size: 11px;
+    }
+  }
+
+  &__phone {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 8px 76px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 3px;
+    color: #000000;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #14B111;
+      position: absolute;
+      top: 13px;
+      margin-left: -20px;
+      animation: blink 1.5s ease-in 1s infinite;
+    }
+
+    @include small-tablet {
+      padding: 5px 24px;
+      font-size: 12px;
+
+      &::before {
+        width: 5px;
+        height: 5px;
+        margin-left: -10px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 283px;
+    margin: 0 auto;
+    padding-left: 12px;
+    color: #FFFFFF;
+    background-image: url('../images/icons/benefit.svg');
+    background-size: 11px 5px;
+    background-position: left top 6px;
+    background-repeat: no-repeat;
+
+    @include large {
+      font-size: 12px;
+    }
+
+    @include small-tablet {
+      font-size: 8px;
+    }
+  }
+}

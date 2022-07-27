@@ -1,0 +1,364 @@
+.portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+
+  &__title {
+    margin-bottom: 53px;
+
+    @include small-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__wrapper {
+    padding-bottom: 130px;
+    background-color: #373738;
+
+    @include small-tablet {
+      padding-bottom: 65px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__swiper {
+    height: 330px;
+    border-radius: 10px;
+
+    @include small-tablet {
+      height: 181px;
+    }
+
+    .swiper-slide {
+      opacity: 0.3;
+
+    }
+
+    .swiper-slide-visible {
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    border-radius: 15px;
+
+    @include small-tablet {
+      border-radius: 30px;
+      overflow: hidden;
+    }
+  }
+
+  &__play {
+    width: 103px;
+    height: 103px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba($color-dark, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    svg {
+      width: 43px;
+      height: 43px;
+      fill: $color-white
+    }
+
+    @include small-tablet {
+      width: 50px;
+      height: 50px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 17px;
+
+    @include small-tablet {
+      font-size: 9px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__info {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.3;
+    background-size: 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    &--time {
+      padding-left: 39px;
+      background-image: url('../images/icons/time.svg');
+
+      @include tablet {
+        padding-left: 20px;
+      }
+
+      @include small-tablet {
+        padding-left: 15px;
+      }
+    }
+
+    &--price {
+      padding-left: 32px;
+      text-decoration: underline;
+      background-image: url('../images/icons/dollar.svg');
+
+      @include tablet {
+        padding-left: 20px;
+      }
+
+      @include small-tablet {
+        padding-left: 15px;
+      }
+    }
+
+    @include tablet {
+      font-size: 16px;
+      background-size: 15px;
+    }
+
+    @include small-tablet {
+      font-size: 9px;
+    }
+
+    @include mobile {
+      background-size: 10px;
+    }
+  }
+
+  &__ref {
+    font-size: 14px;
+    background-color: $color-white;
+    text-decoration: underline;
+    padding: 7px 24px;
+
+    @include tablet {
+      font-size: 12px;
+    }
+
+    @include small-tablet {
+      font-size: 9px;
+      padding: 4px 14px;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    width: 50px;
+    height: 50px;
+
+    &::after {
+      display: none;
+    }
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    @include small-tablet {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include mobile {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .swiper-button-disabled {
+    svg {
+      fill: $color-white;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 75px;
+
+    svg {
+      width: 100%;
+      height: 15px;
+      fill: $color-orange;
+    }
+
+    @include large {
+      top: 45px;
+      right: 15px;
+    }
+
+    @include small-tablet {
+      top: 57px;
+      right: 40px;
+    }
+
+    @include mobile {
+      top: 35px;
+    }
+  }
+
+  &__subswiper {
+    position: relative;
+  }
+
+  &__subswiper-container {
+    height: 134px;
+    margin-top: -20px;
+    z-index: 2;
+
+    @include tablet {
+      height: 103px;
+    }
+
+    @include small-tablet {
+      margin-top: 15px;
+      height: 48px;
+    }
+  }
+
+  &__subswiper-item {
+    cursor: pointer;
+    width: 150px;
+    position: relative;
+
+    @include small-tablet {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    min-height: 130px;
+    padding-top: 14px;
+    padding-right: 46px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 7px 24px;
+    background: $color-orange;
+    border-radius: 0 0 0 10px;
+    overflow: hidden;
+
+    @include tablet {
+      padding-left: 9px;
+      padding-right: 20px;
+    }
+
+    @include small-tablet {
+      min-height: 65px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  &__box {
+    margin-right: 15px;
+    align-self: flex-start;
+  }
+
+  &__img {
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__subswiper-img {
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -55%;
+    width: auto;
+  }
+
+  .swiper-pagination-bullet {
+    width: 57px;
+    height: 7px;
+    border-radius: 2px;
+    background-color: #C4C4C4;
+
+    &-active {
+      background-color: $color-orange;
+    }
+
+    @include small-tablet {
+      width: 25px;
+      height: 3px;
+    }
+  }
+
+  @include small-tablet {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+}
+
+.slider-padding {
+  padding-top: 90px;
+  position: relative;
+
+  @include mobile {
+    padding-top: 50px;
+  }
+}

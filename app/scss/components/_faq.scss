@@ -1,0 +1,277 @@
+.faq {
+  padding-bottom: 60px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__title {
+    text-align: start;
+    margin-bottom: 65px;
+
+    span {
+      text-transform: uppercase;
+    }
+
+    @include large {
+      font-size: 45px;
+    }
+
+    @include tablet {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 21px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__left {
+    max-width: 585px;
+    width: 50%;
+    width: 100%;
+    margin-right: 20px;
+    align-self: flex-start;
+
+
+    @include tablet {
+      max-width: 550px;
+      align-self: center;
+      margin-right: 0;
+    }
+
+    @include small-tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__сonsultation {
+    padding: 70px 23px;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    background: linear-gradient(69.19deg, rgba(0, 0, 0, 0.2) 54.86%, rgba(255, 255, 255, 0.2) 97.81%),
+      linear-gradient(288.01deg, #0C2C9F 20.42%, #5F82FF 99.08%);
+    position: relative;
+    z-index: 1;
+
+    @include small-tablet {
+      padding: 47px 24px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__img {
+    max-width: 352px;
+    width: 100%;
+    height: 371px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include mobile {
+      max-width: 152px;
+      height: 162px;
+    }
+  }
+
+  &__author {
+    max-width: 185px;
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 92px;
+
+    span {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: 400;
+      font-size: 16px;
+      color: #FFAA6B;
+      text-transform: initial;
+
+      @include mobile {
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-left: -15px;
+      }
+    }
+
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__link {
+    @include mobile {
+      font-size: 12px;
+      padding: 9px 16px;
+    }
+  }
+
+  &__right {
+    padding-top: 35px;
+
+    @include tablet {
+      padding-top: 0;
+      margin-bottom: 78px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__box {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include small-tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      font-size: 9px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F5F1FF;
+    padding: 13px;
+    padding-left: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover {
+      .faq__subtitle {
+        color: rgba($color-dark, 0.5)
+      }
+    }
+
+    &--active {
+      .faq__btn {
+        &::after {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+      }
+    }
+  }
+
+  &__btn {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 170, 107, 0.7);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 50%;
+      height: 3px;
+      border-radius: 3px;
+      background-color: $color-white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      transform: rotate(90deg);
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    @include small-tablet {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__text {
+    max-width: 480px;
+    padding: 10px 20px;
+    padding-right: 15px;
+    background-color: #F5F1FF;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__answer {
+    font-size: 18px;
+    font-weight: 600;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__body {
+    font-weight: 300;
+    font-size: 18px;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include small-tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      font-size: 9px;
+    }
+  }
+}

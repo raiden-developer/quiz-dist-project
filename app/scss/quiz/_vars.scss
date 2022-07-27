@@ -1,0 +1,13 @@
+$white: #fff;
+$black: #373738;
+$cta: #ffaa6b;
+
+$main-font: "Stolzl", sans-serif;
+
+@mixin c-pointer {
+  cursor: pointer;
+}
+
+@mixin c-default {
+  cursor: default;
+}

@@ -1,0 +1,250 @@
+.feedback {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    padding-top: 130px;
+    padding-bottom: 45px;
+    position: relative;
+    z-index: 1;
+
+    @include large {
+      padding-top: 184px;
+      padding-bottom: 54px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      padding-top: 97px;
+      padding-bottom: 18px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      padding-top: 32px;
+      padding-bottom: 18px;
+    }
+
+    @include mobile {
+      padding: 20px;
+      padding-bottom: 15px;
+    }
+  }
+
+  &__left {
+    max-width: 410px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-right: 15px;
+    position: relative;
+    z-index: 1;
+
+    @include large {
+      max-width: 295px;
+    }
+
+    @include tablet {
+      max-width: 100%;
+      flex-direction: row;
+      margin-bottom: 50px;
+      margin-right: 0;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__box {
+    @include tablet {
+      margin-right: 20px;
+    }
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__title {
+    font-size: 34px;
+    text-align: left;
+    margin-bottom: 11px;
+
+    @include large {
+      font-size: 22px;
+      margin-bottom: 37px;
+    }
+
+    @include small-tablet {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__descr {
+    font-size: 20px;
+    padding-right: 30px;
+    margin-bottom: auto;
+
+    @include large {
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    max-width: 308px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background-color: $color-white;
+      position: absolute;
+      left: -20%;
+      top: -50%;
+      z-index: -1;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__benefit {
+    padding-left: 20px;
+    background-image: url('../images/icons/apply.svg');
+    background-position: left center;
+    background-size: 12px 8px;
+    background-repeat: no-repeat;
+  }
+
+  &__inner {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @include mobile {
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__right {
+    max-width: 420px;
+
+    @include tablet {
+      flex-basis: 50%;
+      margin-right: 20px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__master {
+    width: 38%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    position: absolute;
+    top: 4%;
+    right: -1%;
+    bottom: 0;
+    z-index: -1;
+
+    @include tablet {
+      width: auto;
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      flex-basis: 50%;
+      align-self: flex-end;
+    }
+
+    @include mobile {
+      align-self: center;
+    }
+  }
+
+  &__img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include mobile {
+      max-width: 165px;
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    max-width: 265px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: $color-white;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+
+    span {
+      display: block;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 10px;
+
+      @include large {
+        font-size: 16px;
+      }
+
+      @include small-tablet {
+        font-size: 10px;
+        margin-bottom: 5px;
+      }
+    }
+
+    @include small-tablet {
+      font-size: 8px;
+    }
+
+    @include mobile {
+      top: 15%;
+      bottom: auto;
+      left: -30%;
+      max-width: 120px;
+      padding: 0;
+      background-color: transparent;
+      text-align: left;
+    }
+  }
+}

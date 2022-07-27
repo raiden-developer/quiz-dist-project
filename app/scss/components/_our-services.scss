@@ -1,0 +1,116 @@
+.our-services {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto 80px;
+
+    @include small-tablet {
+      margin: 0 auto 30px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 30px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 15px;
+    }
+  }
+
+  &__more {
+    background-color: #DADADA;
+  }
+}
+
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 410px;
+  padding-top: 75px;
+  padding-bottom: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__top {
+    padding-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    max-width: 280px;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 7px 14px;
+    color: $color-dark;
+    background-color: $color-white;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+  }
+
+  &__price {
+    display: inline-block;
+    max-width: 210px;
+    width: 100%;
+    padding: 10px 14px;
+    font-weight: 400;
+    font-size: 18px;
+    color: $color-dark;
+    background-color: $color-orange;
+    // clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+  }
+
+  &__bottom {
+    display: flex;
+    // align-items: flex-start;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &__order {
+    flex-grow: 1;
+    // margin-right: 30px;
+  }
+
+  &__link {
+    max-width: 150px;
+    font-size: 16px;
+    padding-left: 50px;
+    padding-top: 15px;
+    margin-left: auto;
+    text-decoration-line: underline;
+    color: $color-white;
+    background-image: url('../images/icons/quest.svg');
+    background-size: 18%;
+    background-position: left 20px top 20px;
+    background-repeat: no-repeat;
+  }
+}
+
+.btn {}
+
+
+
+
+.container {}
+
+.title {}
