@@ -912,7 +912,7 @@ $(function () {
 
     window.addEventListener("resize", resizeThrottler, false);
 
-    var resizeTimeout;
+    let resizeTimeout;
     function resizeThrottler() {
       // ignore resize events as long as an actualResizeHandler execution is in the queue
       if (!resizeTimeout) {
@@ -1105,7 +1105,7 @@ $(function () {
     // function submitHandler(e) {
     //   e.preventDefault();
 
-    //   var request = new XMLHttpRequest();
+    //   let request = new XMLHttpRequest();
 
     //   request.onreadystatechange = function () {
     //     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
@@ -1118,9 +1118,9 @@ $(function () {
     //     "application/x-www-form-urlencoded"
     //   );
 
-    //   var data = new FormData(this);
+    //   let data = new FormData(this);
 
-    //   var dataPost;
+    //   let dataPost;
     //   // Формируем массив данных для отправки
     //   data.forEach(function (value, key) {
     //     dataPost += "&" + key + "=" + value;
@@ -1140,7 +1140,7 @@ $(function () {
     if (window.NodeList && !NodeList.prototype.forEach) {
       NodeList.prototype.forEach = function (callback, thisArg) {
         thisArg = thisArg || window;
-        for (var i = 0; i < this.length; i++) {
+        for (let i = 0; i < this.length; i++) {
           callback.call(thisArg, this[i], i, this);
         }
       };
@@ -1243,7 +1243,12 @@ $(function () {
           2) *
         percentSum;
 
-      price.innerHTML = Math.trunc(totalSum);
+      price.innerHTML = prettify(Math.trunc(totalSum));
+    }
+
+    function prettify(num) {
+      let n = num.toString();
+      return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + " ");
     }
 
     changeMaterial(material.value);
