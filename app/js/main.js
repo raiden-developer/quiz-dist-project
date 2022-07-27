@@ -1221,6 +1221,9 @@ $(function () {
       } else if (material.value === "Кирпич") {
         defaultSum = 25000;
         percentSum = (defaultSum / 100) * 10;
+      } else if (material.value === "Блок") {
+        defaultSum = 25000;
+        percentSum = (defaultSum / 100) * 10;
       }
 
       calculateSum();
