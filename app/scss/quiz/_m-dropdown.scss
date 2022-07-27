@@ -121,6 +121,7 @@ Select c dropdown на JS
 
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+  border-bottom: 1px solid $cta;
 
   width: 100%;
 
@@ -154,7 +155,6 @@ Select c dropdown на JS
 
 .m-dropdown__list-item:last-child {
   border-radius: 0 0 6px 6px;
-  border-bottom: 1px solid $cta;
 }
 
 .m-dropdown__list-item:hover {
