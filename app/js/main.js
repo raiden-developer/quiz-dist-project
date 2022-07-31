@@ -1208,22 +1208,22 @@ $(function () {
     const price = document.querySelector(".calc__total-number");
 
     let defaultSum = 18000;
-    let percentSum = (defaultSum / 100) * 10;
+    let additional = 0;
 
     function changeMaterial() {
       length.value = 4;
       width.value = 4;
       height.value = 4;
 
-      if (material.value === "Дерево") {
-        defaultSum = 18000;
-        percentSum = (defaultSum / 100) * 10;
+      if (material.value === "Каркас") {
+        defaultSum = 17000;
+        additional = 0;
+      } else if (material.value === "Бревно") {
+        defaultSum = 20000;
+        additional = 3000;
       } else if (material.value === "Кирпич") {
-        defaultSum = 25000;
-        percentSum = (defaultSum / 100) * 10;
-      } else if (material.value === "Блок") {
-        defaultSum = 25000;
-        percentSum = (defaultSum / 100) * 10;
+        defaultSum = 23000;
+        additional = 6000;
       }
 
       calculateSum();
@@ -1236,12 +1236,11 @@ $(function () {
     });
 
     function calculateSum() {
-      const totalSum =
-        (Number(width.value) +
-          Number(length.value) +
-          Number(height.value) -
-          2) *
-        percentSum;
+      const w = Number(width.value);
+      const l = Number(length.value);
+      const h = Number(height.value);
+
+      let totalSum = ((w * l * h) / 3) * 800 + additional;
 
       price.innerHTML = prettify(Math.trunc(totalSum));
     }
