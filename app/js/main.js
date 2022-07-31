@@ -1064,6 +1064,10 @@ $(function () {
         const decrease = el.querySelector(".m-number__control--dec");
         const input = el.querySelector(".m-number__field");
 
+        input.addEventListener("input", (e) => {
+          input.value = inputValidation(+e.target.value);
+        });
+
         increase.addEventListener("click", () => {
           input.value = inputValidation(+input.value + 1);
           input.dispatchEvent(new Event("input", { bubbles: true }));

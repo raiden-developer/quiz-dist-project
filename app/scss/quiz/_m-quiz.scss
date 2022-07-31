@@ -41,6 +41,11 @@
     }
   }
 
+  .simplebar-scrollbar {
+    cursor: pointer;
+    pointer-events: visible;
+  }
+
   .simplebar-scrollbar::before {
     left: 50%;
     right: auto;
@@ -50,6 +55,7 @@
 
     background-color: $cta;
     opacity: 1;
+    cursor: pointer;
   }
 }
 
