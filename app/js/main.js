@@ -1213,7 +1213,6 @@ $(function () {
     const height = document.querySelector(".calc__inputs input[name=Высота]");
     const price = document.querySelector(".calc__total-number");
 
-    let defaultSum = 18000;
     let additional = 0;
 
     function changeMaterial() {
@@ -1226,7 +1225,7 @@ $(function () {
 
       if (material.value === "Каркас") {
         // defaultSum = 17000;
-        additional = ((((w * l * h) / 3) * 800) / 100) * -15;
+        additional = "";
       } else if (material.value === "Бревно") {
         // defaultSum = 20000;
         additional = 3000;
@@ -1237,6 +1236,12 @@ $(function () {
 
       calculateSum();
     }
+
+    [length, width, height].forEach((field) => {
+      field.addEventListener("input", () => {
+        calculateSum();
+      });
+    });
 
     [length, width, height].forEach((field) => {
       field.addEventListener("change", () => {
@@ -1250,6 +1255,16 @@ $(function () {
       const h = Number(height.value);
 
       let totalSum = ((w * l * h) / 3) * 800 + additional;
+
+      if (material.value === "Каркас") {
+        if (totalSum > 18000) {
+          totalSum = totalSum - ((((w * l * h) / 3) * 800) / 100) * 15;
+        }
+      }
+
+      if (totalSum < 2000) {
+        totalSum = 2000;
+      }
 
       price.innerHTML = prettify(Math.trunc(totalSum));
     }
